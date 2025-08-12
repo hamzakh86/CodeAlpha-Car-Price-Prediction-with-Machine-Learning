@@ -1,10 +1,10 @@
 import requests
 import json
 
-# URL de l'API Flask
+# Flask API URL
 API_URL = "http://localhost:5000/predict"
 
-# Données de test pour la prédiction
+# Test data for prediction
 test_data = {
     "Present_Price": 8.0,
     "Driven_kms": 50000,
@@ -17,29 +17,28 @@ test_data = {
 
 def test_api():
     """
-    Teste l'API de prédiction du prix des voitures.
+    Tests the car price prediction API.
     """
     try:
-        # Envoyer une requête POST à l'API
+        # Send a POST request to the API
         response = requests.post(API_URL, json=test_data)
-        
-        # Vérifier le statut de la réponse
+
+        # Check the response status
         if response.status_code == 200:
             result = response.json()
-            print("Test réussi!")
-            print(f"Données d'entrée: {test_data}")
-            print(f"Prix prédit: {result['predicted_price']} lakhs")
+            print("Test successful!")
+            print(f"Input data: {test_data}")
+            print(f"Predicted price: {result['predicted_price']} lakhs")
         else:
-            print(f"Erreur: {response.status_code}")
+            print(f"Error: {response.status_code}")
             print(f"Message: {response.text}")
-    
+
     except requests.exceptions.ConnectionError:
-        print("Erreur: Impossible de se connecter à l'API. Assurez-vous que l'application Flask est en cours d'exécution.")
+        print("Error: Unable to connect to the API. Make sure the Flask app is running.")
     except Exception as e:
-        print(f"Erreur inattendue: {e}")
+        print(f"Unexpected error: {e}")
 
 if __name__ == "__main__":
-    print("Test de l'API de prédiction du prix des voitures")
+    print("Car Price Prediction API Test")
     print("=" * 50)
     test_api()
-

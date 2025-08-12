@@ -24,7 +24,8 @@ The used car market is dynamic and complex, with prices influenced by a multitud
 The repository contains the following files and directories:
 
 *   `data/car data.csv`: The original dataset used for model training.
-*   `car_price_prediction.py`: Python script for data preprocessing, linear regression model training, evaluation, and saving the trained model. It also generates a visualization plot.
+*   `car_price_prediction.py`: Python*   `car_price_prediction_model.ipynb`: Main notebook containing the code for data preprocessing, linear regression model training, and evaluation.
+*   `car_price_prediction_model_en.ipynb`: English version of the main notebook.
 *   `car_price_model.pkl`: The trained linear regression model, saved in pickle format, ready for predictions.
 *   `app.py`: A Flask web application that exposes a RESTful API for car price prediction using the trained model.
 *   `requirements.txt`: List of necessary Python dependencies to run the project.
